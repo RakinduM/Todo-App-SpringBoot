@@ -7,7 +7,7 @@
 
 <head>
     <meta charset="ISO-8859-1">
-    <title>Add ToDo Item</title>
+    <title>Edit Item</title>
 
     <link rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -25,10 +25,10 @@
 
 <div class="container">
 
-    <h1 class="p-3"> ADD A TODO ITEM </h1>
+    <h1 class="p-3"> EDIT ITEM </h1>
 
-    <form:form action="/saveToDoItem" method="post" modelAttribute="todo">
-
+    <form:form action="/editSaveToDoItem" method="post" modelAttribute="todo">
+        <form:input path="id" type="hidden"/>
         <div class="row">
             <div class="form-group col-md-12">
                 <label class="col-md-3" for="title">Title</label>
@@ -76,8 +76,8 @@
 
         var msg = "${message}";
         console.log(msg);
-        if (msg == "Save Failure") {
-            Command: toastr["error"]("Something went wrong with the save.")
+        if (msg == "Edit Failure") {
+            Command: toastr["error"]("Something went wrong with the edit.")
         }
 
         toastr.options = {

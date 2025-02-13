@@ -2,6 +2,7 @@
          pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
 
 <!DOCTYPE html>
@@ -43,7 +44,7 @@
 
 <div class="container">
 
-    <h1 class="p-3"> ToDo Item List</h1>
+    <h1 class="p-3"> TODO ITEM LIST</h1>
 
     <form:form>
 
@@ -62,7 +63,7 @@
                 <tr>
                     <td>${todo.id}</td>
                     <td>${todo.title}</td>
-                    <td>${todo.date}</td>
+                    <td><fmt:formatDate value="${todo.date}" pattern="yyyy-MM-dd" /></td>
                     <td>${todo.status}</td>
                     <td><button type="button" class="btn btn-success">
                         <a href="/updateToDoStatus/${todo.id}">Mark Complete</a>
@@ -92,7 +93,7 @@
 
         var msg = "${message}";
 
-        if (msg == "Save Success") {
+        if (msg == "Save Successful") {
             Command: toastr["success"]("Item added successfully!!")
         } else if (msg == "Delete Success") {
             Command: toastr["success"]("Item deleted successfully!!")

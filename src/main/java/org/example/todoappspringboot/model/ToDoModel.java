@@ -2,6 +2,7 @@ package org.example.todoappspringboot.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
@@ -18,6 +19,7 @@ public class ToDoModel {
     private String title;
 
     @Column
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date date;
 
     @Column

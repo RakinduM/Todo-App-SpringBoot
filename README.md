@@ -21,8 +21,8 @@ This is a simple To-Do List application built using Spring Boot, JSP, and MySQL.
 
 ### 1. Clone the Repository
 ```sh
-git clone https://github.com/RakinduM/todo-app.git
-cd todo-app
+git clone https://github.com/RakinduM/Todo-App-SpringBoot.git
+cd Todo-App-SpringBoot
 ```
 
 ### 2. Configure the Database
